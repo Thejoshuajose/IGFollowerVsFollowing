@@ -1,0 +1,23 @@
+{
+  "name": "ig-follower-vs-following",
+  "version": "1.0.0",
+  "description": "Browser console tooling to find which Instagram accounts you follow that do not follow back, with a passive collector that issues no requests of its own.",
+  "author": "Joshua Gonzales",
+  "license": "MIT",
+  "homepage": "https://github.com/Thejoshuajose/IGFollowerVsFollowing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thejoshuajose/IGFollowerVsFollowing.git"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "instagram",
+    "followers",
+    "browser-console"
+  ]
+}

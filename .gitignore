@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Exported data — these contain real follower lists. Never commit them.
+ig-*.csv
+ig-*.json
+followers*.json
+following*.json
+*-export.*
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs and crash artifacts
+*.log
+*.stackdump
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
