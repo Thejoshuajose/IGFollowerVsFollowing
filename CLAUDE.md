@@ -58,3 +58,14 @@ When changing anything here, weigh detection risk explicitly. Adding requests is
 ## Testing
 
 Every behavior change ships with tests. Network and DOM paths aren't covered (they need a live authenticated session) — test the pure logic on `_pure` and say plainly what remains unverified.
+
+## Write code like a senior full-stack developer (standing rule, owner 2026-11-02)
+
+- **Don't overcomplicate.** Solve the task in front of you with the least code that is complete and
+  correct. No speculative abstractions, extra layers, config knobs or helpers for one caller. Reuse
+  what the repo already has before adding anything.
+- **Test-driven.** Write the failing test first, make it pass with the minimum change, then tidy up.
+  Tests assert behaviour and cover the edge and failure paths that matter.
+- **Fastest good path.** Take the most direct route to a working, tested result. Small diffs, no
+  unrelated refactors, no gold-plating. "Minimal" never means skipping validation, error handling,
+  security or this repo's binding rules.
