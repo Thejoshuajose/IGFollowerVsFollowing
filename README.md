@@ -112,13 +112,17 @@ If you ever get flagged again, switch to this.
 
 ---
 
+## Requirements and setup
+
+Nothing to install or build: each script is plain ES5 JavaScript, pasted whole into the Chrome DevTools console on `www.instagram.com`. There are no dependencies, no bundler and no hosting; it is not a web app. Node.js 18 or later is needed only to run the tests.
+
 ## Tests
 
 ```
-node --test
+npm test          # same as: node --test
 ```
 
-134 tests across all three scripts — URL matching, list diffing by `pk`, header capture (asserting cookies are never captured), count parsing, skip/plan logic, CSV escaping, backoff, and error-body classification. Includes regression tests built from the real `checkpoint_required` body that locked this account, and one pinning the incomplete-capture hazard.
+136 tests across all three scripts — URL matching, list diffing by `pk`, header capture (asserting cookies are never captured), count parsing, skip/plan logic, CSV escaping, backoff, and error-body classification. Includes regression tests built from the real `checkpoint_required` body that locked this account, and one pinning the incomplete-capture hazard.
 
 Network and DOM paths aren't covered; they need a live authenticated session.
 
@@ -127,6 +131,10 @@ Network and DOM paths aren't covered; they need a live authenticated session.
 - Automating Instagram is against their Terms of Use. I called reading "low-risk" before this account was locked from reading alone — that was wrong.
 - Private endpoints change without notice. If a call starts 404ing, the route moved; watch the Network tab while loading your own followers list and update the path.
 - `ig-observe.js` depends on Instagram using `fetch`/`XHR` for list loading. If they move to something else, the panel will simply stay at zero — it won't break the page.
+
+## Contributing
+
+Work lands on `main`. Project rules for contributors and AI agents are in [CLAUDE.md](CLAUDE.md) and [AGENTS.md](AGENTS.md), including the hard constraints above (the observer never sends a request, checkpoints are never retried, `DRY_RUN` stays `true` by default) and the standing "write code like a senior full-stack developer" rule.
 
 ## License
 
